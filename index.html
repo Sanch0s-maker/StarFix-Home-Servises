@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+ <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18281907644"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -1073,4 +1073,36 @@ window.addEventListener("scroll",()=>{
 });
 </script>
 </body>
+  <!-- StarFix — Google Ads conversion tracking -->
+  <script>
+  (function () {
+    var LEAD = 'AW-18281907644/goMLCJO86NMcELyLv41E';
+
+    function fire() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', { 'send_to': LEAD, 'value': 1.0, 'currency': 'USD' });
+      }
+    }
+
+    // Кліки по телефону та email
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('a[href^="tel:"], a[href^="mailto:"]')) fire();
+    }, true);
+
+    // Відправка форми
+    document.addEventListener('submit', function () { fire(); }, true);
+
+    // Резерв: форма шле дані через fetch без submit-події
+    var _f = window.fetch;
+    if (_f) {
+      window.fetch = function () {
+        var u = arguments[0];
+        var tg = typeof u === 'string' && u.indexOf('api.telegram.org') !== -1;
+        var p = _f.apply(this, arguments);
+        if (tg) p.then(function (r) { if (r.ok) fire(); }).catch(function(){});
+        return p;
+      };
+    }
+  })();
+  </script>
 </html>
