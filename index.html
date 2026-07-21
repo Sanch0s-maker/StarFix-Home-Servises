@@ -286,6 +286,11 @@ footer p{color:#334155;font-size:.78rem}
 .faq-a p{font-size:.93rem;color:#475569;line-height:1.7;padding:0 2.5rem 1.35rem 0}
 
 
+
+/* anchor offset for fixed navbar */
+section[id]{scroll-margin-top:80px}
+#quote{scroll-margin-top:88px}
+
 /* OFFER MODAL */
 .modal-overlay{
   position:fixed;inset:0;z-index:400;
@@ -432,7 +437,7 @@ footer p{color:#334155;font-size:.78rem}
   </ul>
   <div class="nav-right">
     <a class="nav-phone" href="tel:2532976878">📞 (253) 297-6878</a>
-    <a class="nav-cta" href="#contact">Free Quote</a>
+    <a class="nav-cta" href="#quote">Free Quote</a>
   </div>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -446,7 +451,7 @@ footer p{color:#334155;font-size:.78rem}
   <a href="#faq" onclick="toggleMenu()">FAQ</a>
   <a href="#contact" onclick="toggleMenu()">Contact</a>
   <a href="tel:2532976878" style="color:var(--gold);font-weight:600">📞 (253) 297-6878</a>
-  <a href="#contact" class="m-cta" onclick="toggleMenu()">Get a Free Quote</a>
+  <a href="#quote" class="m-cta" onclick="toggleMenu()">Get a Free Quote</a>
 </div>
 
 <!-- HERO -->
@@ -457,7 +462,7 @@ footer p{color:#334155;font-size:.78rem}
       <h1>Built Right.<br><em>Fixed Fast.</em><br>Guaranteed.</h1>
       <p class="hero-sub">Drywall repair, handyman work, and full remodels — done by a licensed general contractor. Serving Bellevue, Kirkland, Mercer Island, Sammamish, Seattle &amp; Tacoma.</p>
       <div class="hero-btns">
-        <a href="#contact" class="btn-gold">Get a Free Estimate →</a>
+        <a href="#quote" class="btn-gold">Get a Free Estimate →</a>
         <a href="#gallery" class="btn-outline-w">See Our Work</a>
       </div>
       <div class="hero-stats">
@@ -480,7 +485,7 @@ footer p{color:#334155;font-size:.78rem}
           <span class="hcb">✓ Bonded</span>
           <span class="hcb">✓ Insured</span>
         </div>
-        <a href="#contact" class="hero-card-cta">Get Your Free Estimate →</a>
+        <a href="#quote" class="hero-card-cta">Get Your Free Estimate →</a>
         <div class="hero-card-phone">or call <a href="tel:2532976878">(253) 297-6878</a></div>
       </div>
     </div>
@@ -775,7 +780,7 @@ footer p{color:#334155;font-size:.78rem}
         <div class="ctext"><span class="clbl">Hours</span><span>Mon–Sat: 8:00 AM – 6:00 PM</span></div>
       </div>
     </div>
-    <div class="form-card">
+    <div class="form-card" id="quote">
       <div class="form-title">Get a Free Estimate</div>
       <p class="form-sub">Takes 30 seconds. We will reach out to discuss your project.</p>
       <form id="quoteForm">
@@ -843,13 +848,13 @@ footer p{color:#334155;font-size:.78rem}
       <li>Free on-site estimate, no obligation</li>
       <li>Licensed, bonded &amp; insured general contractor</li>
     </ul>
-    <a href="#contact" class="modal-cta" onclick="claimOffer()">Claim This Offer &rarr;</a>
+    <a href="#quote" class="modal-cta" onclick="claimOffer()">Claim This Offer &rarr;</a>
     <button class="modal-dismiss" onclick="closeOffer()">No thanks, just browsing</button>
     <p class="modal-fine">Mention this offer when you contact us. One discount per project. Cannot be combined with other offers.</p>
   </div>
 </div>
 
-<a href="#contact" class="float-cta" id="floatCta">&#11088; Get Free Estimate</a>
+<a href="#quote" class="float-cta" id="floatCta">&#11088; Get Free Estimate</a>
 <a href="tel:2532976878" class="float-call" id="floatCall" aria-label="Call StarFix">&#128222;</a>
 
 <script>
