@@ -23,27 +23,24 @@ export default async function handler(req, res) {
     return res.status(429).json({ error: 'Too many requests. Please try again later.' });
   }
 
-  const { firstName, lastName, email, phone, service, notes } = req.body;
+  const { firstName, phone, email } = req.body;
 
-  // Basic validation
-  if (!firstName || !phone) {
-    return res.status(400).json({ error: 'Name and phone are required.' });
+  // Validation
+  if (!firstName || !phone || !email) {
+    return res.status(400).json({ error: 'Name, phone, and email are required.' });
   }
-  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return res.status(400).json({ error: 'Invalid email address.' });
   }
 
-  const fullName = `${firstName}${lastName ? ' ' + lastName : ''}`;
-
   const message = [
-    '🔔 *New StarFix Quote Request!*',
+    '🔔 *New StarFix Lead!*',
     '',
-    `👤 *Name:* ${fullName}`,
+    `👤 *Name:* ${firstName}`,
     `📱 *Phone:* ${phone}`,
-    `📧 *Email:* ${email || 'not provided'}`,
-    `🔧 *Service:* ${service || 'not specified'}`,
+    `📧 *Email:* ${email}`,
     '',
-    `📝 *Project Details:* ${notes || 'none'}`,
+    `🕐 ${new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })} PT`,
   ].join('\n');
 
   const telegramUrl = `https://api.telegram.org/bot${process.env.TELEGRAM_BOT_TOKEN}/sendMessage`;
