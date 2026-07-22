@@ -23,14 +23,11 @@ export default async function handler(req, res) {
     return res.status(429).json({ error: 'Too many requests. Please try again later.' });
   }
 
-  const { firstName, phone, email } = req.body;
+  const { firstName, phone } = req.body;
 
   // Validation
-  if (!firstName || !phone || !email) {
-    return res.status(400).json({ error: 'Name, phone, and email are required.' });
-  }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    return res.status(400).json({ error: 'Invalid email address.' });
+  if (!firstName || !phone) {
+    return res.status(400).json({ error: 'Name and phone are required.' });
   }
 
   const message = [
@@ -38,7 +35,6 @@ export default async function handler(req, res) {
     '',
     `👤 *Name:* ${firstName}`,
     `📱 *Phone:* ${phone}`,
-    `📧 *Email:* ${email}`,
     '',
     `🕐 ${new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })} PT`,
   ].join('\n');
