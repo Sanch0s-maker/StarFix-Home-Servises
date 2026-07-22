@@ -776,7 +776,6 @@ section[id]{scroll-margin-top:80px}
       <form id="quoteForm">
         <div class="field"><label>Name *</label><input type="text" id="fn" placeholder="John Smith" required></div>
         <div class="field"><label>Phone *</label><input type="tel" id="ph" placeholder="(253) 555-0000" required></div>
-        <div class="field"><label>Email <span style="color:#94a3b8;font-weight:400;text-transform:none">(optional)</span></label><input type="email" id="em" placeholder="john@email.com"></div>
         <button type="submit" class="sbtn">Get My Free Estimate &rarr;</button>
         <p class="form-note">We will call you back within 24 hours. No obligation.</p>
       </form>
@@ -894,8 +893,7 @@ if(quoteForm){
 
     const data = {
       firstName: document.getElementById("fn").value.trim(),
-      phone:     document.getElementById("ph").value.trim(),
-      email:     document.getElementById("em").value.trim()
+      phone:     document.getElementById("ph").value.trim()
     };
 
     if(!data.firstName || !data.phone){
