@@ -24,7 +24,7 @@
   "priceRange": "$$",
   "hasCredential": {"@type":"EducationalOccupationalCredential","credentialCategory":"Construction Contractor License","recognizedBy":{"@type":"GovernmentOrganization","name":"Washington State Department of Labor & Industries"},"identifier":"STARFHS746JG"},
   "foundingDate": "2020",
-  "description": "Licensed General Contractor serving Bellevue, Mercer Island, Sammamish, Seattle and Tacoma. Drywall repair, water damage repair, texture matching, handyman services, bathroom and kitchen remodeling.",
+  "description": "Licensed General Contractor serving Bellevue, Mercer Island, Sammamish, Seattle and Tacoma. Drywall repair, water damage repair, texture matching, handyman services, bathroom remodeling.",
   "address": {
     "@type": "PostalAddress",
     "addressRegion": "WA",
@@ -46,8 +46,7 @@
     "itemListElement": [
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Drywall Repair"}},
       {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Handyman Services"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bathroom Remodeling"}},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Kitchen Remodeling"}}
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Bathroom Remodeling"}}
     ]
   },
   "openingHoursSpecification": [
@@ -562,7 +561,7 @@ section[id]{scroll-margin-top:80px}
     <span class="eyebrow">What We Do</span>
     <h2>Interior & Exterior Services</h2>
     <p class="sec-intro">From drywall repair and handyman work to full kitchen and bathroom remodels — every job is handled by a licensed general contractor.</p>
-    <div class="services-grid">
+    <div class="services-grid" style="max-width:640px">
       <div class="srv-card">
         <div class="srv-icon">🧱</div>
         <h3>Drywall Repair</h3>
@@ -574,18 +573,6 @@ section[id]{scroll-margin-top:80px}
         <h3>Repairs &amp; Punch Lists</h3>
         <p>Doors, trim, fixtures, and the list of small repairs that never gets finished. Available to remodeling and drywall clients.</p>
         <span class="srv-tag">General</span>
-      </div>
-      <div class="srv-card">
-        <div class="srv-icon">🛁</div>
-        <h3>Bathroom Remodeling</h3>
-        <p>Full gut renovations, custom tile, vanities, glass showers, and plumbing — done to code.</p>
-        <span class="srv-tag">Interior</span>
-      </div>
-      <div class="srv-card">
-        <div class="srv-icon">🍳</div>
-        <h3>Kitchen Remodeling</h3>
-        <p>Cabinetry, granite countertops, layouts, pendant lighting, and full appliance integration.</p>
-        <span class="srv-tag">Interior</span>
       </div>
     </div>
   </div>
@@ -892,7 +879,6 @@ section[id]{scroll-margin-top:80px}
       <form id="quoteForm">
         <div class="field"><label>Name *</label><input type="text" id="fn" placeholder="John Smith" required></div>
         <div class="field"><label>Phone *</label><input type="tel" id="ph" placeholder="(253) 555-0000" required></div>
-        <div class="field"><label>Email <span style="color:#94a3b8;font-weight:400;text-transform:none">(optional)</span></label><input type="email" id="em" placeholder="john@email.com"></div>
         <button type="submit" class="sbtn">Get My Free Estimate &rarr;</button>
         <p class="form-note">We will call you back within 24 hours. No obligation.</p>
       </form>
@@ -921,7 +907,7 @@ section[id]{scroll-margin-top:80px}
       <a href="#contact" style="color:#475569;text-decoration:none;margin:0 .4rem">Tacoma WA</a> ·
       <a href="#contact" style="color:#475569;text-decoration:none;margin:0 .4rem">Puyallup WA</a> ·
       <a href="#contact" style="color:#475569;text-decoration:none;margin:0 .4rem">Renton WA</a>
-      <br>Drywall Repair · Water Damage Repair · Texture Matching · Handyman Services · Bathroom Remodeling · Kitchen Remodeling
+      <br>Drywall Repair · Water Damage Repair · Texture Matching · Ceiling Repair · Repairs & Punch Lists · Bathroom Remodeling
     </p>
   </div>
 </section>
@@ -1012,8 +998,7 @@ if(quoteForm){
 
     const data = {
       firstName: document.getElementById("fn").value.trim(),
-      phone:     document.getElementById("ph").value.trim(),
-      email:     document.getElementById("em").value.trim()
+      phone:     document.getElementById("ph").value.trim()
     };
 
     if(!data.firstName || !data.phone){
